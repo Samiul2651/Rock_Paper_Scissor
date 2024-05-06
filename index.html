@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+</head> 
+
+<h1>Rock Paper Scissor Game</h1>
+
+<script>
+    function ComputerChoice(){
+        let x = Math.floor(Math.random() * 3);
+        if(x == 1)return "Rock";
+        else if(x == 2)return "Paper";
+        return "Scissor";
+    }
+
+    function humanChoice(){
+        let x1 = prompt("Choose 1 for Rock, 2 for Paper and 3 for Scissor");
+        let x = parseInt(x1);
+        if(x == 1)return "Rock";
+        else if(x == 2)return "Paper";
+        return "Scissor";
+        
+    }
+
+    let human = humanChoice();
+    let computer = ComputerChoice();
+    if(human == computer){
+        alert("Draw");
+    }
+    else{
+        if(human == "Rock"){
+            if(computer == "Paper"){
+                alert("Lost, You Choose Rock, Computer Choose Paper");
+            }
+            else alert("Won, You Choose Rock, Computer Choose Scissor");
+        }
+        else if(human == "Paper"){
+            if(computer == "Rock"){
+                alert("Won, You Choose Paper, Computer Choose Rock");
+            }
+            else alert("Lost, You Choose Paper, Computer Choose Scissor");
+        }
+        else{
+            if(computer == "Rock"){
+                alert("Lost, You Choose Scissor, Computer Choose Rock");
+            }
+            else{
+                alert("Won, You Choose Scissor, Computer Choose Paper");
+            }
+        }
+    }
+
+</script>
